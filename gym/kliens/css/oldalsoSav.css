@@ -1,0 +1,98 @@
+#navigacio{
+	
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:62px;
+	z-index:24;
+	width:100%;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding-left:12px;
+	/*padding-right:12px;*/
+	
+}
+
+
+#navigacio #cimResz{
+	
+	height:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-weight:bold;
+	/*font-size:1.2em;*/
+	
+}
+#oldalso-sav{
+
+	position:absolute;
+	top:62px;
+	left:0%;
+	width:0px;
+	z-index:100;
+	/*display:none;*/
+	height:calc(100% - 62px);
+	/*transition: 2s;*/
+	background-color:black;
+	z-index:400;
+	transition: 0.5s;
+	
+}
+
+#oldalso-sav .elem{
+	
+	padding-left:8px;
+	height:60px;
+	width:100%;
+	display:flex;
+	align-items:center;
+	display:none;
+
+}
+
+a{
+	text-decoration:none;
+}
+
+#oldalso-sav .elem:hover{
+	background-color:black;
+}
+
+
+#oldalso-sav .elem .elemKep{
+
+	height:20px;
+	
+}
+
+#oldalso-sav .elem .elemCim{
+
+	margin-left:6px;
+	color:white;
+	font-weight:bold;
+	/*font-size:1.3vw;*/
+	
+}
+
+#menuNyito{
+	
+	/*display:none;*/
+	transition: 0.2s;
+
+}
+
+#menuNyito:hover{
+	
+	/*display:none;*/
+	transform:scale(1.1) rotate(-1deg);
+
+}
+
+.elem:hover{
+		transform:scale(1.01) rotate(-1deg);
+
+}
+

@@ -1,0 +1,489 @@
+	@import url('https://fonts.googleapis.com/css2?family=Andada+Pro&family=Crimson+Text&display=swap');
+
+
+*{
+	
+	box-sizing: border-box;
+	margin:0px;
+	padding:0px;
+	font-family: 'Andada Pro', serif;
+	font-family: 'Crimson Text', serif;
+	
+}
+
+html,body{
+		box-sizing: border-box;
+	animation-fill-mode: forwards;
+	animation-name: megjelenes;
+	animation-duration: 0.5s;
+}
+
+
+@keyframes megjelenes {
+  from {
+	    transform: scale(0, 0);
+
+	}
+  to {
+	    transform: scale(1, 1);
+
+	}
+}
+
+@keyframes eltunes {
+  from {
+	    transform: scale(1, 1);
+
+	}
+  to {
+	    transform: scale(0, 0);
+
+	}
+}
+
+
+#navigacio{
+	
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:62px;
+	z-index:24;
+	width:100%;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding-left:12px;
+	padding-right:12px;
+	
+}
+
+
+#navigacio #cimResz{
+	
+	height:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	color:white;
+	font-weight:bold;
+	font-size:1.2em;
+	
+}
+
+
+#oldal{
+
+position:fixed;
+left:0px;
+top:62px;
+width:100%;
+height:calc(100% - 62px);
+/*max-height:calc(100vh - 62px);*/
+z-index:40;
+margin:0 auto;
+text-align:center;
+/*background-color:lime;*/
+display:flex;
+align-items:center;
+justify-content:center;
+/*background-color:cyan;*/
+
+}
+
+
+#oldalso-sav{
+
+	display:none;
+	position:absolute;
+	top:62px;
+	left:0%;
+	width:300px;
+	z-index:100;
+	/*display:none;*/
+	height:calc(100% - 62px);
+	  transition: 2s;
+	
+}
+
+#oldalso-sav .elem{
+	
+	padding-left:8px;
+	height:60px;
+	width:100%;
+	display:flex;
+	align-items:center;
+
+}
+
+a{
+	text-decoration:none;
+}
+
+#oldalso-sav .elem:hover{
+	background-color:gray;
+}
+
+
+#oldalso-sav .elem .elemKep{
+
+	height:20px;
+	
+}
+
+#oldalso-sav .elem .elemCim{
+
+	margin-left:6px;
+	color:white;
+	font-weight:bold;
+	font-size:1.3vw;
+	
+}
+
+#menuNyito{
+	
+	/*display:none;*/
+
+}
+
+#tartalom{
+	
+	position:absolute;
+	/*left:300px;*/
+	/*background-color:lime;*/
+	height:100%;
+	padding:24px;
+	
+	width:100%;
+	max-width:1366px;
+	/*width:calc(100% - 300px);*/
+	
+
+	/*background-color:pink;*/
+}
+
+#tartalom .udvozlo{
+	
+	text-align:center;
+	padding-bottom:12px;
+	
+}
+
+#tartalom hr{
+	
+	margin-bottom:24px;
+	opacity:0.2;
+	
+}
+
+#jelenlegiIdo{
+	font-weight:bold;
+}
+
+.sor{
+	
+	background-color:blue;
+	width:100%;
+	height:auto;
+	
+}
+
+.sorKozepre{
+	/*background-color:blue;*/
+	width:100%;
+	height:auto;
+	margin:0 auto;
+	text-align:center;
+	display:flex;
+	justify-content:center;
+	flex-direction: row
+}
+
+.statisztikaBlokk{
+	
+	position:relative;
+	display:flex;
+	background-color:red;
+	margin:4px;
+	color:white;
+	font-weight:bold;
+	width: 49%;
+	height:150px;
+	align-items:center;
+	justify-content:center;
+	flex-direction: row;
+
+}
+
+.statisztikaBlokk .statisztikaBlokkBal{
+
+
+	position:absolute;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction: column
+
+
+}
+
+.statisztikaBlokk .statisztikaBlokkBal p{
+
+
+	display:block;
+
+
+}
+
+.statisztikaBlokk .statisztikaBlokkJobb{
+	
+
+	/*background-color:yellow;*/
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	
+}
+
+
+.statisztikaBlokk .statisztikaBlokkJobb img{
+	
+	position:absolute;
+	height:100%;
+	width:20%;
+	right:0px;
+	object-fit:contain;
+	opacity:0.2;
+	filter:invert();
+	
+}
+
+.adatNevek{
+	display:block;
+	padding:12px;
+	text-align:center;
+	margin:0 auto;
+}
+
+.blokk{
+	
+	position:relative;
+	display:inline-block;
+	/*background-color:red;*/
+	width: 24.99999%;
+	height:200px;
+
+}
+
+
+.felhasznalokBlokk{
+	
+	width:100%;
+	max-width:100%;
+	height:auto;
+	max-height:calc(100% - 62px);
+	/*background-color:red;*/
+	
+}
+
+.felhasznalokBlokkFejLec{
+	height:60px;
+	width:100%;
+
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:12px;
+	
+}
+
+.felhasznalokBlokkFejLec p{
+	color:white;
+	font-weight:bold;
+}
+
+.felhasznalokBlokkFejLec img{
+	
+	position:relative;
+	height:100%;
+	
+}
+
+.felhasznalokBlokkTartalom{
+	/*background-color:cyan;*/
+	/*background-color:red;*/
+	height:AUTO;
+	max-height:calc(100% - 224px);
+
+	overflow:auto;
+}
+
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	overflow:scroll;
+
+	height:auto;
+}
+
+td, th {
+    text-align:center;
+	padding: 8px;
+}
+
+.felhasznalokBlokkTartalomAdatok{
+	border-bottom:1px solid rgba(200,200,200,0.7);
+	height:100%;
+}
+
+tr:nth-child(even) {
+	background-color: rgba(240,240,240,1);
+}
+
+#uj{
+	display:none;
+	/*display:flex;*/
+	position:absolute;
+	z-index:48;
+
+	right:0%;
+	/*width:calc(100% - 300px);*/
+	width:100%;
+	top:62px;
+	height:calc(100% - 62px);
+	background-color:rgba(255,255,255,1);
+	backdrop-filter: blur(1px);
+	justify-content: center;
+	align-items: center;
+	overflow:auto;
+}
+
+#ujMegse,#modositMegse{
+		width: 90%;
+	height:40px;
+	border:none;
+	border-radius:6px;
+	margin-top:12px;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+#ujtartalom{
+	width: 100%;
+	
+	max-width:80%;
+	height: auto;
+	display: block;
+	text-align: center;
+	overflow:auto;
+
+}
+#ujtartalom input[type="text"],input[type="number"],input[type="date"], select{
+	margin:4px;
+	width: 90%;
+	height:40px;
+	border:1px solid rgba(0,0,0,0.6);
+	border-radius:6px;
+	padding-left:12px;
+}
+
+#ujtartalom input[type="submit"]{
+	width: 90%;
+	height:40px;
+	border:none;
+	border-radius:6px;
+	margin-top:12px;
+	    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+#ujtartalom input[type="reset"]{
+	width: 90%;
+	height:40px;
+	border:0px;
+	border-radius:6px;
+	margin-top:12px;
+	color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+#modositoDiv{
+	display:none;
+	/*display:flex;*/
+	position:absolute;
+	z-index:48;
+
+	right:0%;
+	/*width:calc(100% - 300px);*/
+	/*width:calc(100% - 300px);*/
+	width:100%;
+	top:62px;
+	height:calc(100% - 62px);
+	background-color:rgba(255,255,255,1);
+	backdrop-filter: blur(10px);
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  
+
+
+
+  #tartalom{
+	  /*background-color:cyan;*/
+	  left:0px;
+	  width:100%;
+  }
+  
+  #uj{
+	  width:100%;
+  }  
+  
+  #modositoDiv{
+	  width:100%;
+  }
+  
+  .sorKozepre{
+	  display:block;
+  }
+  
+  .statisztikaBlokk{
+	  
+	  background-color:red;
+	  width:100%;
+  }
+  
+  .statisztikaBlokk .statisztikaBlokkJobb img{
+	
+	width:auto;
+	max-height:50px;
+	filter:invert();
+	
+	}
+
+	.felhasznalokBlokk{
+		
+		height:auto;
+		
+	}
+
+	.felhasznalokBlokkTartalom{
+		background-color:red;
+		height:AUTO;
+		max-height:calc(100% - 62px);
+		overflow:auto;
+	}
+  
+} 
+
+
