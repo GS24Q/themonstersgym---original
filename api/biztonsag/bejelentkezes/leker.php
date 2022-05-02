@@ -1,21 +1,13 @@
 <?php
 
-//error_reporting(0);
-
-//header("Access-Control-Allow-Origin: *");
-//header("Content-Type: application/json; charset=UTF-8");
-//header("Access-Control-Allow-Methods: GET");
-//header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
+error_reporting(0);
 function hibasBejelentkezesEllenorzese($pultosid){
 	
 include("../adatok.php");
 $mehet=true;
 $adatok = array();
 
-// Create connection
 $conn = new mysqli($szero, $felhasznalo, $jelszo, $adatbazis);
-// Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
@@ -32,7 +24,6 @@ global $adatok;
 $szamlalo = 0;
 
 if ($valasz->num_rows > 0) {
-  // output data of each row
   while($row = $valasz->fetch_assoc()) {	
 		    $adatok[] = $row;
 			$szamlalo++;
@@ -42,15 +33,9 @@ if ($valasz->num_rows > 0) {
 }
 $conn->close();
 
-
-//return json_encode($adatok[0],JSON_UNESCAPED_UNICODE);
 return json_encode($adatok[0],true);
 
 }
 
 
 }
-
-
-
-?>

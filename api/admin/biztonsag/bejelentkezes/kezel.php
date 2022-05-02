@@ -1,20 +1,13 @@
 <?php
 
-//error_reporting(0);
-
-//header("Access-Control-Allow-Origin: *");
-//header("Content-Type: application/json; charset=UTF-8");
-//header("Access-Control-Allow-Methods: GET");
-//header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+error_reporting(0);
 
 function hibasBejelentkezesHozzairasa($kinek,$nullaz){
 	
 include("../../adatok.php");
 $mostaniDatum = date('Y-m-d H:i:s');
 
-// Create connection
 $conn = new mysqli($szero, $felhasznalo, $jelszo, $adatbazis);
-// Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
@@ -42,9 +35,7 @@ $akcio=true;
 $siker=0;
 
 if($akcio){
-	// Create connection
 	$conn = new mysqli($szero, $felhasznalo, $jelszo, $adatbazis);
-	// Check connection
 	if ($conn->connect_error) {
 	  die("Connection failed: " . $conn->connect_error);
 	}
@@ -61,10 +52,8 @@ if(!empty($nullaz)){
 	}
 }
 	if ($conn->query($sql) === TRUE) {
-		//echo "Record updated successfully";
 		$siker=1;
 	} else {
-		//echo "Error updating record: " . $conn->error;
 		$siker=0;
 	}
 }

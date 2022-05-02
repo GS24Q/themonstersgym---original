@@ -5,9 +5,7 @@
 		include("../adatok.php");
 		$mostaniDatum = date('Y-m-d H:i:s');
 		
-		// Create connection
 		$conn = new mysqli($szero, $felhasznalo, $jelszo, $adatbazis);
-		// Check connection
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
@@ -60,5 +58,3 @@
 		}
 		
 	}
-	
-?>

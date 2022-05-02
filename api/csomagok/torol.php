@@ -2,17 +2,10 @@
 
 error_reporting(0);
 include("../adatok.php");
-
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-//$bejovo_id = $_SESSION["monstersgymid"];
-
-
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -44,27 +37,12 @@ $bejovo = json_decode(file_get_contents("php://input"));
 
 $csomagId=$bejovo->csomagId;
 
-//echo $teremZarolasa;
-
-
-//$adatok = json_decode($bejovo);
-
 if(empty($csomagId)){
 	$hiba=true;
 }
 
-
-//print($bejovo->teremZarolasa);
-//echo "<>";
-//$hiba=true;
-//print json_encode($bejovo,JSON_UNESCAPED_UNICODE);
-
-//$hiba=true;
-
 if(!$hiba){
-	// Create connection
 	$conn = new mysqli($szero, $felhasznalo, $jelszo, $adatbazis);
-	// Check connection
 	if ($conn->connect_error) {
 	  die("Connection failed: " . $conn->connect_error);
 	}
@@ -74,13 +52,10 @@ if(!$hiba){
 	$sql = "DELETE FROM `csomagok` WHERE id=".$csomagId;
 
 	if ($conn->query($sql) === TRUE) {
-		//echo "Record updated successfully";
 		$siker=1;
 	} else {
-		//echo "Error updating record: " . $conn->error;
 		$siker=0;
 	}
-	
 	
 }
 
@@ -93,9 +68,6 @@ if($siker){
 	$kiirando = json_encode($valasz);
 
 	echo $kiirando;
-	
-	//$json = ({"valasz":"Sikeresen megváltoztattam a beállításokat"});
-	//print json_encode($json,JSON_UNESCAPED_UNICODE);
 
 }else{
 	http_response_code(200);
@@ -107,21 +79,5 @@ if($siker){
 	echo $kiirando;
 	
 }
-//var_dump(json_decode($json));
-
-//print json_encode($adat,JSON_UNESCAPED_UNICODE);
-//print_r($data);
-
-
-
-
-
-
-//$sql = "SELECT * FROM tagok LIMIT 5";
-
-
 
 }
-
-
-?>

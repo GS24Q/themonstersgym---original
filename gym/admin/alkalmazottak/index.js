@@ -518,7 +518,7 @@ function magasabbRanguEngedely(){
 		kartya: jelszo.value
 	};
 	
-const kuldendo = JSON.stringify(adatok);
+		const kuldendo = JSON.stringify(adatok);
 		let xhr = new XMLHttpRequest();
 		xhr.open("POST", link+"api/ellenorzes/magasabbRanguEngedely.php", true);
 		xhr.setRequestHeader('Content-Type', 'application/json');
@@ -738,6 +738,7 @@ const kuldendo = JSON.stringify(adatok);
 					const valasz = JSON.parse(data)
 					//alert("Valami hibás");
 					$('#ujfelhasznalo').modal('hide');
+					valaszCim.innerHTML="Valami nem sikerült";
 					valaszCim.innerHTML="Valami nem sikerült";
 					valaszSzoveg.innerHTML=valasz.valasz;
 					setTimeout(function(){

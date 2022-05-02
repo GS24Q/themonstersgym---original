@@ -2,17 +2,10 @@
 
 error_reporting(0);
 include("../adatok.php");
-
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-//$bejovo_id = $_SESSION["monstersgymid"];
-
-
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -21,7 +14,6 @@ session_start();
 $sima = $_SESSION["monstersgymid"];
 $admin = $_SESSION["monstersgymadminid"];
 
-//if(!isset($sima) && !isset($admin)){
 if(!isset($admin)){
 	
 	http_response_code(405);
@@ -59,11 +51,6 @@ $ujEmail=$bejovo->ujEmail;
 $ujBecenev=$bejovo->ujBecenev;
 $kartya=$bejovo->kartya;
 
-//echo $teremZarolasa;
-
-
-//$adatok = json_decode($bejovo);
-
 if(empty($ujVezetekNev)){
 	$hiba=true;
 }
@@ -73,7 +60,6 @@ if(empty($ujKeresztNev)){
 }
 
 if(empty($ujUtoNev)){
-	//$hiba=true;
 	$ujUtoNev="";
 }
 
@@ -96,9 +82,6 @@ if(!isset($ujTelefonszam)){
 if(empty($ujLakcim)){
 	$hiba=true;
 }
-
-
-
 
 if(empty($ujFelhasznalonev)){
 	$hiba=true;
@@ -123,19 +106,8 @@ if(empty($kartya)){
 }
 
 
-
-
-//print($bejovo->teremZarolasa);
-//echo "<>";
-//$hiba=true;
-//print json_encode($bejovo,JSON_UNESCAPED_UNICODE);
-
-//$hiba=true;
-
 if(!$hiba){
-	// Create connection
 	$conn = new mysqli($szero, $felhasznalo, $jelszo, $adatbazis);
-	// Check connection
 	if ($conn->connect_error) {
 	  die("Connection failed: " . $conn->connect_error);
 	}
@@ -145,10 +117,8 @@ if(!$hiba){
 	$sql = "INSERT INTO `pultosok`(`felhasznalonev`, `jelszo`, `vezetekNev`, `keresztNev`, `utoNev`, `nem`, `szuletesiDatum`, `szemelyiId`, `telefonszam`, `lakcim`, `regisztracioDatum`, `email`, `becenev`, `kartya`) VALUES ('".$ujFelhasznalonev."','".crypt($ujJelszo,$titkositas)."','".$ujVezetekNev."','".$ujKeresztNev."','".$ujUtoNev."','".$ujNeme."','".$ujszuletesiDatum."','".$ujSzemelyiId."','".$ujTelefonszam."','".$ujLakcim."',current_timestamp(),'".$ujEmail."','".$ujBecenev."','".$kartya."')";
 
 	if ($conn->query($sql) === TRUE) {
-		//echo "Record updated successfully";
 		$siker=1;
 	} else {
-		//echo "Error updating record: " . $conn->error;
 		$siker=0;
 	}
 	
@@ -164,11 +134,9 @@ if($siker){
 	$kiirando = json_encode($valasz);
 
 	echo $kiirando;
-	
-	//$json = ({"valasz":"Sikeresen megváltoztattam a beállításokat"});
-	//print json_encode($json,JSON_UNESCAPED_UNICODE);
 
 }else{
+	
 	http_response_code(200);
 	$valasz = new stdClass();
 	$valasz->valasz = "Valami nem jó";
@@ -178,21 +146,5 @@ if($siker){
 	echo $kiirando;
 	
 }
-//var_dump(json_decode($json));
-
-//print json_encode($adat,JSON_UNESCAPED_UNICODE);
-//print_r($data);
-
-
-
-
-
-
-//$sql = "SELECT * FROM tagok LIMIT 5";
-
-
 
 }
-
-
-?>

@@ -2,14 +2,10 @@
 
 error_reporting(0);
 include("../adatok.php");
-
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -29,7 +25,6 @@ if(!isset($sima) && !isset($admin)){
 	$kiirando = json_encode($valasz,JSON_UNESCAPED_UNICODE);
 
 	echo $kiirando;
-	
 	
 	die();
 	
@@ -55,7 +50,6 @@ if(!$hiba){
 	}
 	$conn->set_charset('utf8mb4');
 	
-	
 	$sql = "DELETE FROM `tagok` WHERE id=".$id;
 
 	if ($conn->query($sql) === TRUE) {
@@ -64,7 +58,6 @@ if(!$hiba){
 		$siker=0;
 	}
 	
-	
 	$sql = "DELETE FROM `forgalom` WHERE ki=".$id;
 	if ($conn->query($sql) === TRUE) {
 		$siker++;
@@ -72,14 +65,12 @@ if(!$hiba){
 		$siker=0;
 	}
 	
-	
 	$sql = "DELETE FROM `tranzakciok` WHERE ki=".$id;
 	if ($conn->query($sql) === TRUE) {
 		$siker++;
 	}else{
 		$siker=0;
 	}
-	
 	
 }
 
@@ -101,11 +92,6 @@ if($siker==3){
 	$kiirando = json_encode($valasz);
 
 	echo $kiirando;
-	
 }
 
-
 }
-
-
-?>

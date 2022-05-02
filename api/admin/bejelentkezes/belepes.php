@@ -1,12 +1,10 @@
 <?php
 
-//error_reporting(0);
-
+error_reporting(0);
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
 include("../../adatok.php");
 include("../biztonsag/bejelentkezes/leker.php");
 include("../biztonsag/bejelentkezes/kezel.php");
@@ -78,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$valasz = new stdClass();
 		$valasz->valasz = "Hiányos adatok";
 		$kiirando = json_encode($valasz,JSON_UNESCAPED_UNICODE);
-		//echo $kiirando;
 		die();
 	}else{
 
@@ -100,7 +97,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			  if($row["jelszo"]==crypt($bejovo_jelszo,$titkositas)){
 					zarolasEllenorzes($row["id"],true);
 					break;
-
 			  }
 
 			  hibasBejelentkezesHozzairasa($row["id"],0);
@@ -149,10 +145,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 		
 
-
 	}
 
 }
-
-
-?>
